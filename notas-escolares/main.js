@@ -1,6 +1,4 @@
-function calcularNota(event) {
-    // Previnindo comportamento padrão da página
-    event.preventDefault();
+function calcularNota() {
 
     // Puxando informações de entrada do formulário
     let notaLinguagens = document.querySelector("#linguagens").value;
@@ -10,21 +8,21 @@ function calcularNota(event) {
     let notaRedacao = document.querySelector("#redacao").value;
 
     // Pesos de cada disciplina
-    const pesoLinguagens = 1;
-    const pesoMatematica = 1;
-    const pesoCienciasHumanas = 1.5;
-    const pesoCienciasNatureza = 1.5;
-    const pesoRedacao = 3;
+    let pesoLinguagens = 1;
+    let pesoMatematica = 2;
+    let pesoCienciasHumanas = 1;
+    let pesoCienciasNatureza = 4;
+    let pesoRedacao = 2;
 
     // Cálculo das notas ponderadas
-    const notaPonderadaLinguagens = notaLinguagens * pesoLinguagens;
-    const notaPonderadaMatematica = notaMatematica * pesoMatematica;
-    const notaPonderadaCienciasHumanas = notaHumanas * pesoCienciasHumanas;
-    const notaPonderadaCienciasNatureza = notaNatureza * pesoCienciasNatureza;
-    const notaPonderadaRedacao = notaRedacao * pesoRedacao;
+    let notaPonderadaLinguagens = notaLinguagens * pesoLinguagens;
+    let notaPonderadaMatematica = notaMatematica * pesoMatematica;
+    let notaPonderadaCienciasHumanas = notaHumanas * pesoCienciasHumanas;
+    let notaPonderadaCienciasNatureza = notaNatureza * pesoCienciasNatureza;
+    let notaPonderadaRedacao = notaRedacao * pesoRedacao;
 
     // Cálculo da nota final
-    const notaFinal = (
+    let notaFinal = (
     notaPonderadaLinguagens +
     notaPonderadaMatematica +
     notaPonderadaCienciasHumanas +
@@ -32,8 +30,9 @@ function calcularNota(event) {
     notaPonderadaRedacao
     ) / (pesoLinguagens + pesoMatematica + pesoCienciasHumanas + pesoCienciasNatureza + pesoRedacao);
 
-    console.log("Nota Final do ENEM: " + notaFinal);
+    alert("Nota Final do ENEM: " + notaFinal);
     
-    elementoResultadoNota = document.querySelector("#resultado_nota");
-    elementoResultadoNota.innerHTML = notaFinal.toFixed(2);
+    // Imprimindo resultados no HTML
+    // elementoResultadoNota = document.querySelector("#resultado_nota");
+    // elementoResultadoNota.innerHTML = notaFinal.toFixed(2);
 }
